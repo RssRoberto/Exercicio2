@@ -1,0 +1,20 @@
+def determinar_categoria_habilitacao(rodas, peso, pessoas):
+  if rodas == 2 or rodas == 3:
+    return "A"
+  elif rodas == 4 and pessoas <= 8 and peso <= 3500:
+    return "B"
+  elif rodas >= 4 and 3500 < peso <= 6000:
+    return "C"
+  elif rodas >= 4 and pessoas > 8:
+    return "D"
+  elif rodas >= 4 and peso > 6000:
+    return "E"
+  else:
+    return "Categoria desconhecida"  
+
+rodas = int(input("Digite a quantidade de rodas do veículo: "))
+peso = float(input("Digite o peso bruto do veículo em quilogramas: "))
+pessoas = int(input("Digite a quantidade de pessoas no veículo: "))
+
+categoria = determinar_categoria_habilitacao(rodas, peso, pessoas)
+print(f"A melhor categoria  de habilitação pra o veículo é: {categoria}")
